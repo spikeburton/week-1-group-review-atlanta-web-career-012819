@@ -62,8 +62,13 @@ pokemon = [
 
 
 # How would you get the url for Bulbasaur's ability?
+pokemon[0][:abilities][0][:ability][:url]
 # How would you return the first pokemon with base experience over 40?
+pokemon.find { |who| who[:base_experience] > 40 }
 # How would you return ALL OF THE pokemon with base experience over 40? (Gotta catch em all)
+pokemon.select { |who| who[:base_experience] > 40 }
 # How would you return an array of all of the pokemon's names?
+pokemon.collect { |who| who[:name] }
 # How would you determine whether or not the pokemon array contained any pokemon with a weight greater than 60?
 #  whatever method you use should return true if there are any such pokemon, false if not.
+pokemon.any? { |who| who[:weight] > 60 }
